@@ -1,0 +1,19 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('covid_19_data.csv')
+US= df[df['Country/Region'] == 'US']
+US['ObservationDate'] = pd.to_datetime(US['ObservationDate'])
+
+# Groups the data by date and aggregates confirmed cases by sum function
+daily_cases = US.groupby('ObservationDate')['Confirmed'].sum()
+
+plt.plot (daily_cases)
+plt.title('Growth of COVID-19 Cases in the USA (Jan-Feb 2020)')
+plt.xlabel('Date')
+plt.ylabel('Confirmed Cases')
+plt.xticks(rotation=45)
+
+# Tight layout makes the graph clearer
+plt.tight_layout()
+plt.show()
