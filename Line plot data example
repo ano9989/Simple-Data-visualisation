@@ -1,0 +1,20 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+pd.read_csv('countries.csv')
+data=pd.read_csv('countries.csv')
+us=data[data.country == 'United States']
+Aus= data[data.country == 'Australia']
+plt.plot (us.year, us.population/ 10**6)
+plt.plot (Aus.year, Aus.population/ 10**6)
+plt.legend ([ 'Australia' , ' United States'])
+plt.xlabel ('year')
+plt.ylabel ('population')
+plt.show ()
+
+plt.plot (us.year, us.population / us.population.iloc[0] *100 )
+plt.plot (Aus.year, Aus.population/ Aus.population.iloc [0]*100)
+plt.legend ([ 'Australia' , ' United States'])
+plt.xlabel ('year')
+plt.ylabel ('population change (first year=100)')
+plt.title ('Population change in China and US')
+plt.show ()
