@@ -11,6 +11,7 @@ plt.xlabel ('year')
 plt.ylabel ('population')
 plt.show ()
 
+# Changing y axis to percentage
 plt.plot (us.year, us.population / us.population.iloc[0] *100 )
 plt.plot (Aus.year, Aus.population/ Aus.population.iloc [0]*100)
 plt.legend ([ 'Australia' , ' United States'])
