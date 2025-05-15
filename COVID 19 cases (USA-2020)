@@ -8,10 +8,10 @@ US['ObservationDate'] = pd.to_datetime(US['ObservationDate'])
 # Groups the data by date and aggregates confirmed cases by sum function
 daily_cases = US.groupby('ObservationDate')['Confirmed'].sum()
 
-plt.plot (daily_cases)
-plt.title('Growth of COVID-19 Cases in the USA (Jan-Feb 2020)')
+plt.plot (daily_cases/ 10**6)
+plt.title('Growth of COVID-19 Cases in the USA (Jan 2020-May 2021)')
 plt.xlabel('Date')
-plt.ylabel('Confirmed Cases')
+plt.ylabel('Confirmed Cases (millions)')
 plt.xticks(rotation=45)
 
 # Tight layout makes the graph clearer
